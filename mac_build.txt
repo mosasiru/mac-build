@@ -13,9 +13,6 @@ chrome login
 ■テクストエディット
 　docに追加
 
-■evernote DL
-  => これみる
-
 ■iterm2をDL
 設定をもってきてPreference => General で import: com.googlecode.iterm2.plist
 
@@ -67,7 +64,7 @@ HOMEBREW_CASK_OPTS="--appdir=/Applications"  ansible-playbook -i hosts -vv local
 ■mackup
 mackup restore
 
-■その他
+■その他いれるもの
 ・line apps
 ・push bullet
 
