@@ -19,7 +19,7 @@ chrome login
 ■karabiner DL
 以下のコマンドで設定をexportし、bashで実行
 
-18:47 yusuke.enomoto@mosa$ /Applications/Karabiner.app/Contents/Library/bin/karabiner export [~]
+/Applications/Karabiner.app/Contents/Library/bin/karabiner export
 #!/bin/sh
 
 cli=/Applications/Karabiner.app/Contents/Library/bin/karabiner
