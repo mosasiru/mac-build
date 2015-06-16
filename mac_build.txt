@@ -59,11 +59,8 @@ brew install ansible
 
 mkdir .macbook-provisioning
 cd .macbook-provisioning/
-
-<!--echo 'localhost' > hosts-->
-<!--vim localhost.yml-->
-symlink this repos files!!
-
+ln -s <THIS-REPOSITORY>/hosts hosts
+ln -s <THIS-REPOSITORY>/localhost.yml localhost.yml
 
 HOMEBREW_CASK_OPTS="--appdir=/Applications"  ansible-playbook -i hosts -vv localhost.yml
 

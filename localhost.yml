@@ -73,6 +73,7 @@
       - { name: ngrep }
       - { name: mecab }
       - { name: mecab-ipadic }
+      - { name: xtail }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: dropbox }
