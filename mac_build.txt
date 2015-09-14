@@ -19,9 +19,6 @@ chrome login
 ■karabiner DL
 以下のコマンドで設定をexportし、bashで実行
 
-/Applications/Karabiner.app/Contents/Library/bin/karabiner export
-#!/bin/sh
-
 cli=/Applications/Karabiner.app/Contents/Library/bin/karabiner
 
 $cli set repeat.wait 20
@@ -34,7 +31,7 @@ $cli set remap.jis_kana2return 1
 /bin/echo -n .
 $cli set remap.jis_eisuu2escape 1
 /bin/echo -n .
-å/bin/echo
+/bin/echo
 
 ■Xcode
 app storeからいれる
@@ -44,11 +41,6 @@ sudo xcodebuild -license
  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ○cask
   brew install caskroom/cask/brew-cask
-
-■google IME
-  brew cask install google-japanese-ime
-  http://qiita.com/hkusu/items/159e0ff07441ae2ec1fa にしたがって設定
-  saikidou
 
 ■Andisble
 brew install python
@@ -61,12 +53,22 @@ ln -s <THIS-REPOSITORY>/localhost.yml localhost.yml
 
 HOMEBREW_CASK_OPTS="--appdir=/Applications"  ansible-playbook -i hosts -vv localhost.yml
 
+■google IME
+  brew cask install google-japanese-ime
+  http://qiita.com/hkusu/items/159e0ff07441ae2ec1fa にしたがって設定
+  saikidou
+
+
 ■mackup
 mackup restore
 
 ■その他いれるもの
 ・line apps
 ・push bullet
+
+■zsh
+http://qiita.com/harapeko_wktk/items/47aee77e6e7f7800fa03#2-4
+
 
 
 ■perl
