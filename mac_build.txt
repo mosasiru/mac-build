@@ -66,6 +66,13 @@ mackup restore
 ・line apps
 ・push bullet
 
+■ghq
+go get github.com/motemen/ghq
+
+git config --global ghq.root ~/src
+
+
+
 ■zsh
 http://qiita.com/harapeko_wktk/items/47aee77e6e7f7800fa03#2-4
 

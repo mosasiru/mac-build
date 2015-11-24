@@ -74,6 +74,7 @@
       - { name: mecab }
       - { name: mecab-ipadic }
       - { name: xtail }
+      - { name: awscli }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: dropbox }
@@ -100,6 +101,7 @@
       - { name: vagrant }
       - { name: virtualbox }
       - { name: intellij-idea }
+      - { name: sequel-pro }
 
   tasks:
     - name: homebrew の tap リポジトリを追加
@@ -128,36 +130,36 @@
       with_items: brew_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list
 
     # cask
-    - name: homebrew-cask のインストール
+    - name: homebrew-cask
       homebrew: name=brew-cask state=latest
-    - name: cask パッケージをインストール
+    - name: cask
       homebrew_cask: name={{ item.name }} state={{ item.state|default('installed') }}
       with_items: homebrew_cask_packages
       register: cask_result
-    - name: cask パッケージの情報保存先ディレクトリを作成
+    - name: cask
       file: path=cask_info state=directory
-    - name: cask パッケージの情報を保存
+    - name: cask
       shell: brew cask info {{ item }} > cask_info/{{ item }}
       with_items: cask_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list
 
     #oh-my-zsh
-    - name: oh-my-zsh のインストール
-     shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-     args:
-       creates: ~/.oh-my-zsh/
+    - name: oh-my-zsh
+      shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+      args:
+        creates: ~/.oh-my-zsh/
 
     #Ricty
-    - name: xquartz のインストール (for Ricty)
-     homebrew_cask: name=xquartz
-    - name: fontforge のインストール (for Ricty)
-     homebrew: name=fontforge
-    - name: Ricty のインストール
-     homebrew: name=ricty
-    - name: 生成されたフォントファイルをコピー
-     shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
-     args:
-       creates: ~/Library/Fonts/Ricty-Bold.ttf
-     notify: run fc-cache
+    - name: xquartz(for Ricty)
+      homebrew_cask: name=xquartz
+    - name: fontforge(for Ricty)
+      homebrew: name=fontforge
+    - name: Ricty
+      homebrew: name=ricty
+    - name: copy font
+      shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+      args:
+        creates: ~/Library/Fonts/Ricty-Bold.ttf
+      notify: run fc-cache
 
   handlers:
    - name: run fc-cache
