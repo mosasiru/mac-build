@@ -55,7 +55,7 @@
       - { name: w3m }
       - { name: tmux }
       - { name: reattach-to-user-namespace }
-      - { name: phantomjs }
+      #- { name: phantomjs }
       - { name: graphviz }
       - { name: autojump }
       - { name: gibo }
@@ -75,6 +75,12 @@
       - { name: mecab-ipadic }
       - { name: xtail }
       - { name: awscli }
+      - { name: zlib }
+      - { name: httpie }
+      - { name: pyenv-virtualenv }
+      - { name: leveldb }
+      - { name: postgresql }
+      
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: dropbox }
@@ -102,6 +108,9 @@
       - { name: virtualbox }
       - { name: intellij-idea }
       - { name: sequel-pro }
+      #- { name: pushbullet }
+      - { name: mysqlworkbench }
+      - { name: kindle }
 
   tasks:
     - name: homebrew の tap リポジトリを追加

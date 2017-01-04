@@ -37,10 +37,17 @@ $cli set remap.jis_eisuu2escape 1
 app storeからいれる
 sudo xcodebuild -license
 
+コマンドラインツール
+xcode-select --install
+
 ■brew
  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ○cask
   brew install caskroom/cask/brew-cask
+
+
+インストールディレクトリ変更
+HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 ■Andisble
 brew install python
